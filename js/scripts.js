@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 
-
 var url_string = window.location.href;
 var this_url = new URL(url_string);
-var name = this_url.searchParams.get("name");
-var mmode = this_url.searchParams.get("mode");
+var name = "";//this_url.searchParams.get("name");
+var mmode = "geonames";//this_url.searchParams.get("mode");
 
 var geonamesQueryUrl = "https://secure.geonames.org";
 var gettyQueryUrl = "https://dev.isl.ics.forth.gr/FCdev/getty";
@@ -39,8 +38,6 @@ function sparqlQuery(locInfo) {
         location = location.replace(/'/g, "\\'").replace(/`/g, "\\'");
         queryTable = queryTable + "(' \"" + location + "\" ' '" + location + "' '" + broader + "')\n";
     }
-
-
 
     var query = "select distinct ?inputTerm ?broaderTerm ?tgnId ?tgnType ?tgnPrefLabel ?tgnParents ?tgnLat ?tgnLong {\n" +
             "  VALUES (?ftsText ?inputTerm ?broaderTerm)\n" +
@@ -79,9 +76,7 @@ function sparqlQuery(locInfo) {
 
 }
 
-
-
-function geonames(map) {
+function geonames(map,username) {
     $('#tgnId').parent().hide();
     var $form = $("form.editLocationPopup");
     var params = $form.serializeArray();
@@ -96,7 +91,7 @@ function geonames(map) {
 
     location = name;
 
-    var url = geonamesQueryUrl + "/search?q=" + encodeURIComponent(location.toLowerCase()) + "&username=iltzortz&maxRows=10&style=SHORT&type=json&featureClass=A&featureClass=P&featureClass=L&featureClass=T";
+    var url = geonamesQueryUrl + "/search?q=" + encodeURIComponent(location.toLowerCase()) + "&username="+username+"&maxRows=10&style=SHORT&type=json&featureClass=A&featureClass=P&featureClass=L&featureClass=T";
 //  $("#tgnId").val("");
     //  $("#coords").val("");
 
@@ -104,7 +99,8 @@ function geonames(map) {
     //  $(".gettyResults").html("");
 
     $.get(url, function (data) {
-
+        console.log(url)
+        console.log(data)
         var results = data.geonames;
 
         for (index in results) {
@@ -299,7 +295,7 @@ function add_marker(lat, lon, map) {
 
     marker = new L.Marker([lat, lon], {draggable: true});
     map.addLayer(marker);
-    map.panTo([lat, lon]);
+    map.flyTo([lat, lon]);
 }
 ;
 
@@ -307,6 +303,7 @@ $(document).ready(function () {
 
 
     $('input[name=location_name]').val(name);
+
     console.log(name);
     console.log(mmode);
 
@@ -323,10 +320,12 @@ $(document).ready(function () {
         var mode = url.searchParams.get("mode");
         var xpath = url.searchParams.get("xpath");
         var action = url.searchParams.get("action");
+        var username = data.geonamesUsername;
 
         action = "show";
         mode = "point";
 
+       
 
         $("#save_data").click(function () {
             var id = $("#geoId").val();
@@ -349,11 +348,32 @@ $(document).ready(function () {
             window.close();
         });
 
+        $("#export_data").click(function () {
+            var geoID = $("#geoId").val();
+            var url = "https://secure.geonames.org/getJSON?geonameId=" + geoID + "&username="+username;
+            
+            $.get(url, function (data) {
+                // Convert the data to a JSON string
+                var jsonData = JSON.stringify(data, null, 2);  // Pretty-printed with 2 spaces
+                
+                // Create a Blob with the JSON data
+                var blob = new Blob([jsonData], { type: "application/json" });
+                
+                // Create a link element to trigger the download
+                var link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "geoname_" + geoID + ".json";  // Name of the file, dynamically based on geoID
+                
+                // Append the link, trigger the download, and remove the link
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+        
 
 
         var init = data.init;
-
-
         //////////////////////////////////////MAP///////////////////////////////////////
         var baseLayers = createBaseLayers(data.baseLayers);
         var lrs = new Array();
@@ -369,13 +389,20 @@ $(document).ready(function () {
         });
 
         map.spin(true);
-
+        
         if (mmode === "geonames") {
-            geonames(map);
+            geonames(map,username);
         } else if (mmode === "tgn") {
             gettyTGN(map);
         }
 
+        $("#search").click(function () {
+            name = ($("#location_name").val());
+            $(".geoResults").empty();
+            $(".gettyResults").empty();
+            geonames(map,username);
+        
+        });
         map.spin(false);
 
         var lrs = new Array();
