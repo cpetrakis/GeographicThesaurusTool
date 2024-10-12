@@ -49,12 +49,8 @@
         <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
         
         
-        
-        
         <link rel="stylesheet" href="css/leaflet_1.4.0.css"/>
-     
         <script src="js/leaflet_1.4.0.js" ></script>
-
 
         <link rel="stylesheet" href="css/leaflet.draw.css"/>       
         <script src="js/leaflet.draw.js" ></script>
@@ -64,23 +60,12 @@
         <script src='map/multiselect/mapbox-gl-v0.53.1.js'></script>
         <link href='map/multiselect/mapbox-gl-v0.53.1.css' rel='stylesheet' />
         
-          <script src="map/spin/spin.min.js" charset="utf-8"></script>
+        <script src="map/spin/spin.min.js" charset="utf-8"></script>
         <script src="map/spin/leaflet.spin.min.js" charset="utf-8"></script>
-        
-        
-
+                
         <script src="js/offcanvas.js"></script>
         <script src="js/scripts.js"></script>
-        
-        
-        
-     
-        
-        
-        
-      
-        
-        
+                   
     </head>
     
   
@@ -113,9 +98,15 @@
                             <label for="preferredLocationName">Location name</label>
 
 
-                            <div class="form-group">
-                                <input type="text" name="location_name" class="form-control" id="location_name"  value="" readonly>
+                            <div class="form-group row">
+                                <div class="col-md-9">
+                                    <input type="text" name="location_name" class="form-control" id="location_name" value="">
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-outline-primary btn-block" id="search">Search</button>
+                                </div>
                             </div>
+                            
 
                             <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
                                 <span class="selection">
@@ -149,9 +140,9 @@
 
 
                         
-                        
-                        <button type="button" class="btn btn-outline-primary" id="save_data">Save</button>
-                        <button type="button" class="btn btn-outline-primary" id="cancel">Cancel</button>
+                        <button type="button" class="btn btn-outline-primary" id="export_data">Export GeoJSON</button>
+<!---                   <button type="button" class="btn btn-outline-primary" id="save_data">Save</button>
+                        <button type="button" class="btn btn-outline-primary" id="cancel">Cancel</button>-->
                     </form>
                
             </div>
