@@ -16,8 +16,7 @@
 
 ## Screenshots
 
-![Alt text](img/screen1.jpg)
-![Alt text](img/screen2.jpg)
+![Alt text](img/screen1.png)
 
 #### Built With
 
