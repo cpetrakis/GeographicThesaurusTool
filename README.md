@@ -18,7 +18,7 @@
 
 ![Alt text](img/screen1.png)
 
-#### Built With
+### Built With
 
 * [jQuery](https://jquery.com/)
 * [Bootstrap](https://getbootstrap.com/)
