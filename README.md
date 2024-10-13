@@ -1,6 +1,10 @@
 # Geographic Thesaurus Tool
 
-**Geographic Thesaurus Tool** is a web-based JavaScript tool that allows users to search for location names using the **Geonames API**, select from a list of possible matches, and display the selected location on an interactive map. The tool provides detailed information about the location and allows users to export the data as a **JSON file** for further use.
+**Geographic Thesaurus Tool** is a standalone web application that allows users to search for location names using the **[Geonames API](https://www.geonames.org/export/web-services.html)**, select from a list of possible matches, display them on an interactive map, get detailed information about the location and finally allows users to export the data as a **JSON file** for further use.
+
+![Alt text](img/geographicthesaurus.gif)
+
+**Live Demo [here.](https://petrakis.info/GeographicThesaurusTool/)**
 
 ## Features
 
@@ -12,16 +16,15 @@
 
 ## Screenshots
 
-_Add screenshots or a GIF demonstrating the tool's functionality here._
+![Alt text](img/screen1.jpg)
+![Alt text](img/screen2.jpg)
 
-## Technologies Used
+#### Built With
 
-- **Frontend**: JavaScript, HTML, CSS
-- **API**: [Geonames API](http://www.geonames.org/)
-- **Maps**: Integrates with mapping libraries like Leaflet or Google Maps (replace with the actual library used)
-- **Data Export**: JSON file export functionality
-
-## Getting Started
+* [jQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Leaflet](https://leafletjs.com/)
+* [Geonames](https://www.geonames.org/v3/)
 
 ### Prerequisites
 
@@ -30,33 +33,24 @@ To run the **Geographic Thesaurus Tool** locally, you will need:
 - A modern web browser (e.g., Chrome, Firefox, Edge)
 - Optionally, a local web server to serve the files
 
-### Installation
+### 2. Installation and deployment ###
 
-1. **Clone the repository**:
+Three simple steps: Clone - Deploy - Run.
 
-   ```bash
-   git clone https://github.com/yourusername/geographic-thesaurus-tool.git
-   cd geographic-thesaurus-tool
+1. Copy the project folder into the desired location. 
 
-2. Open the index.html file in your browser:
+2. Deploy (drop the folder into your desired web appliction server (eg webapps for Apache Tomcat)).
 
-You can either:
-
-Open the file directly in a browser (index.html), or
-Serve the files using a local web server (e.g., Python’s SimpleHTTPServer):
-
+3. Run 
 
 ### Configuration
 API Key: You need to provide a Geonames API key in the app.js file. Replace the placeholder username (demo) with your own:
 
 
-var url = "https://secure.geonames.org/search?q=" + locationName + "&username=YOUR_USERNAME&maxRows=10&style=SHORT&type=json";
-Maps: You can configure the map layers or settings in app.js to customize the map display (e.g., switch between map types like satellite or terrain).
-
 ### Usage
 - Search for a location: Enter a location name in the input field and click Search.
 - Select from suggestions: The tool will display a list of possible locations. Select the desired location from the list.
-- View the location: The selected location will be displayed on the map, along with additional information such as coordinates, country, and population.
+- View the location: The selected location will be displayed on the map, along with additional information such as coordinates, id and name from Thesaurus.
 - Export location data: Click the Export button to download a JSON file with detailed information about the selected location.
 
 ### License
@@ -67,4 +61,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Mapping libraries (Leaflet, Google Maps, etc.)
 - JSON export functionality
 
-### Contact
+### 3. Contact ### 
+
+Kostas Petrakis < petrakis1@gmail.com >
