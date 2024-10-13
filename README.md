@@ -57,11 +57,6 @@ API Key: You need to provide a Geonames API key in the app.js file. Replace the 
 ### License
 This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
 
-### Acknowledgements
-- Geonames API
-- Mapping libraries (Leaflet, Google Maps, etc.)
-- JSON export functionality
-
 ### 3. Contact ### 
 
 Kostas Petrakis < petrakis1@gmail.com >
