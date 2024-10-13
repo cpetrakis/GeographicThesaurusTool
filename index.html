@@ -1,151 +1,172 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        
-        <link rel="shortcut icon" href='img/fav.png' type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Hugo 0.80.0">
-        <title>Geographical Thesaurus Tool</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
+<head>
+    <meta charset="utf-8">
+
+    <link rel="shortcut icon" href='img/fav.png' type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Geographical Thesaurus Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .gettyResults {
+            font-size: 12px;
+        }
+
+        .radio {
+            font-size: 12px;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
             }
-            
-            .gettyResults {
-                font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .form-group .btn {
+                margin: 15px 0px 0px 0px;
             }
-            
-            .radio {
-                font-size: 12px;            
-            }
-            
-            body{
-              font-size:14px;  
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-        </style>
+        }
+    </style>
 
 
-        <!-- Custom styles for this template -->
-        <link href="css/offcanvas.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
 
-        <script src="assets/dist/js/jQuery.min.js"></script>
-        <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-        
-        
-        <link rel="stylesheet" href="css/leaflet_1.4.0.css"/>
-        <script src="js/leaflet_1.4.0.js" ></script>
+    <script src="assets/dist/js/jQuery.min.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
-        <link rel="stylesheet" href="css/leaflet.draw.css"/>       
-        <script src="js/leaflet.draw.js" ></script>
 
-        <script type="application/javascript" src="js/turf.min.js"></script>
+    <link rel="stylesheet" href="css/leaflet_1.4.0.css" />
+    <script src="js/leaflet_1.4.0.js"></script>
 
-        <script src='map/multiselect/mapbox-gl-v0.53.1.js'></script>
-        <link href='map/multiselect/mapbox-gl-v0.53.1.css' rel='stylesheet' />
-        
-        <script src="map/spin/spin.min.js" charset="utf-8"></script>
-        <script src="map/spin/leaflet.spin.min.js" charset="utf-8"></script>
-                
-        <script src="js/offcanvas.js"></script>
-        <script src="js/scripts.js"></script>
-                   
-    </head>
-    
-  
-    
-    <body class="bg-light">
+    <link rel="stylesheet" href="css/leaflet.draw.css" />
+    <script src="js/leaflet.draw.js"></script>
 
-        <nav style="z-index:100000000;" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-            <a class="navbar-brand mr-auto mr-lg-0" href="#">Geographical Thesaurus Tool</a>
-            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
+    <script type="application/javascript" src="js/turf.min.js"></script>
 
-        <div class="nav-scroller bg-white shadow-sm"></div>
+    <script src='map/multiselect/mapbox-gl-v0.53.1.js'></script>
+    <link href='map/multiselect/mapbox-gl-v0.53.1.css' rel='stylesheet' />
 
-        <main role="main" class="container">
-            <div class="d-flex align-items-center p-3 my-3 text-white-50  rounded shadow-sm">
-                <img  src="img/banner3.png" alt="" width="100%" height="100%">
-                <!--<div class="lh-100">
+    <script src="map/spin/spin.min.js" charset="utf-8"></script>
+    <script src="map/spin/leaflet.spin.min.js" charset="utf-8"></script>
+
+    <script src="js/offcanvas.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+
+
+
+<body class="bg-light">
+
+    <nav style="z-index:100000000;" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand mr-auto mr-lg-0" href="#">Geographical Thesaurus Tool</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="nav-scroller bg-white shadow-sm"></div>
+
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50  rounded shadow-sm">
+            <img src="img/banner3.png" alt="" width="100%" height="100%">
+            <!--<div class="lh-100">
                     <h6 class="mb-0 text-white lh-100">Hop</h6>
                     <small>Since 2011</small>
                 </div> -->
-            </div>
+        </div>
 
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <h6 class="border-bottom border-gray pb-2 mb-0">Select your location </h6>
-                
-                    <form class="editLocationPopup" role="form">
-                        <div style="margin:15px 0px 0px 0px;" class="form-group">
-                            <label for="preferredLocationName">Location name</label>
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Select your location </h6>
+
+            <form class="editLocationPopup" role="form">
+                <div style="margin:15px 0px 0px 0px;" class="form-group">
+                    <label for="preferredLocationName">Location name</label>
 
 
-                            <div class="form-group row">
-                                <div class="col-md-9">
-                                    <input type="text" name="location_name" class="form-control" id="location_name" value="">
-                                </div>
-                                <div class="col-md-3">
-                                    <button type="button" class="btn btn-outline-primary btn-block" id="search">Search</button>
-                                </div>
-                            </div>
-                            
+                    <div class="form-group row">
+                        <div class="col-md-9">
+                            <input type="text" name="location_name" class="form-control" id="location_name" value="">
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-outline-primary btn-block" id="search">Search</button>
+                        </div>
+                    </div>
 
-                            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                <span class="selection">
-                                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-preferredLocationName-container">
-                                        <span class="select2-selection__rendered" id="select2-preferredLocationName-container"></span>
-                                        <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                    </span>
-                                </span>
-                                <span class="dropdown-wrapper" aria-hidden="true"></span>
 
+                    <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
+                        <span class="selection">
+                            <span class="select2-selection select2-selection--single" role="combobox"
+                                aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                aria-labelledby="select2-preferredLocationName-container">
+                                <span class="select2-selection__rendered"
+                                    id="select2-preferredLocationName-container"></span>
+                                <span class="select2-selection__arrow" role="presentation"><b
+                                        role="presentation"></b></span>
                             </span>
-                        </div>
-                        <div class="gettyResults"></div>
-                        <div class="geoResults"></div>
-                        
-                        <div id="map" style ="width:100%; height: 500px; margin:0px 0px 10px 0px;"></div>
-                        
-                        <div class="form-group">
-                            <label for="tgnId">TGN iD (<a title="Click to go to Getty Location database" target="_blank" href="//www.getty.edu/research/tools/vocabularies/tgn/">Getty Location database</a>)</label>
-                            <input type="text" name="tgnId" class="form-control" id="tgnId" placeholder="Fill in TGN ID (e.g. 1061730)" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="geoId">Geonames iD (<a title="Click to go to Geonames database" target="_blank" href="https://www.geonames.org/">Geonames</a>)</label>
-                            <input type="text" name="geoId" class="form-control" id="geoId" placeholder="Fill in Geonames ID (e.g. 390903)" value=""></div>
-                        <div class="form-group">
-                            <label for="coords">Coordinates</label>
-                            <input type="text" name="coords" class="form-control" id="coords" placeholder="Fill in Coordinates (e.g. 41.494183 2.294718)" value=""></div>
-                        <div class="form-group">
-                            <label for="other_name">Name from Thesaurus</label>
-                            <input type="text" name="other_name" class="form-control" id="other_name" placeholder="Fill in second name for the location (optional)" value=""></div>
+                        </span>
+                        <span class="dropdown-wrapper" aria-hidden="true"></span>
+
+                    </span>
+                </div>
+                <div class="gettyResults"></div>
+                <div class="geoResults"></div>
+
+                <div id="map" style="width:100%; height: 500px; margin:0px 0px 10px 0px;"></div>
+
+                <div class="form-group">
+                    <label for="tgnId">TGN iD (<a title="Click to go to Getty Location database" target="_blank"
+                            href="//www.getty.edu/research/tools/vocabularies/tgn/">Getty Location database</a>)</label>
+                    <input type="text" name="tgnId" class="form-control" id="tgnId"
+                        placeholder="Fill in TGN ID (e.g. 1061730)" value="">
+                </div>
+                <div class="form-group">
+                    <label for="geoId">Geonames iD (<a title="Click to go to Geonames database" target="_blank"
+                            href="https://www.geonames.org/">Geonames</a>)</label>
+                    <input type="text" name="geoId" class="form-control" id="geoId"
+                        placeholder="Fill in Geonames ID (e.g. 390903)" value="">
+                </div>
+                <div class="form-group">
+                    <label for="coords">Coordinates</label>
+                    <input type="text" name="coords" class="form-control" id="coords"
+                        placeholder="Fill in Coordinates (e.g. 41.494183 2.294718)" value="">
+                </div>
+                <div class="form-group">
+                    <label for="other_name">Name from Thesaurus</label>
+                    <input type="text" name="other_name" class="form-control" id="other_name"
+                        placeholder="Fill in second name for the location (optional)" value="">
+                </div>
 
 
-                        
-                        <button type="button" class="btn btn-outline-primary" id="export_data">Export GeoJSON</button>
-<!---                   <button type="button" class="btn btn-outline-primary" id="save_data">Save</button>
+
+                <button type="button" class="btn btn-outline-primary" id="export_data">Export GeoJSON</button>
+                <!---                   <button type="button" class="btn btn-outline-primary" id="save_data">Save</button>
                         <button type="button" class="btn btn-outline-primary" id="cancel">Cancel</button>-->
-                    </form>
-               
-            </div>
-        </main>
-    </body>
+            </form>
+
+        </div>
+    </main>
+</body>
+
 </html>
