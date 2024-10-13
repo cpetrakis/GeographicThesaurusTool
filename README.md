@@ -25,6 +25,8 @@
 * [Leaflet](https://leafletjs.com/)
 * [Geonames](https://www.geonames.org/v3/)
 
+## Getting Started
+
 ### Prerequisites
 
 To run the **Geographic Thesaurus Tool** locally, you will need:
