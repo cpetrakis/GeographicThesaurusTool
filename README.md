@@ -53,7 +53,7 @@ API Key: You need to provide a Geonames API key in the app.js file. Replace the 
 - Export location data: Click the Export button to download a JSON file with detailed information about the selected location.
 
 ### License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
 
 ### Acknowledgements
 - Geonames API
