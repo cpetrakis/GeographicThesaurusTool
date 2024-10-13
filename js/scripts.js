@@ -19,7 +19,7 @@ function sparqlQuery(locInfo) {
 
     var queryTable = "";
 
-    console.log(locInfo)
+   // console.log(locInfo)
     for (let variable in locInfo) {
         var json = locInfo[variable];
         var locJSON = json;
@@ -99,8 +99,8 @@ function geonames(map,username) {
     //  $(".gettyResults").html("");
 
     $.get(url, function (data) {
-        console.log(url)
-        console.log(data)
+       // console.log(url)
+       // console.log(data)
         var results = data.geonames;
 
         for (index in results) {
@@ -166,13 +166,13 @@ function gettyTGN(map) {
     });
     var locInfo = [values];
 
-    console.log(locInfo)
+   // console.log(locInfo)
 
     // locInfo = name;
 
     var query = sparqlQuery(locInfo);
     var url = gettyQueryUrl + "/sparql.json?query=" + encodeURIComponent(query) + "&_implicit=false&implicit=true&_equivalent=false&_form=%2Fsparql";
-    console.log(url)
+ //   console.log(url)
 //    $("#geoId").val("");
 //    $("#coords").val("");
 
@@ -304,8 +304,8 @@ $(document).ready(function () {
 
     $('input[name=location_name]').val(name);
 
-    console.log(name);
-    console.log(mmode);
+   // console.log(name);
+   // console.log(mmode);
 
 
 
@@ -340,7 +340,7 @@ $(document).ready(function () {
 
             window.opener.document.getElementById(logo).value = result;
             window.close();
-            console.log(result);
+         //   console.log(result);
 
         });
 
@@ -391,7 +391,7 @@ $(document).ready(function () {
         map.spin(true);
         
         if (mmode === "geonames") {
-            geonames(map,username);
+          //  geonames(map,username);
         } else if (mmode === "tgn") {
             gettyTGN(map);
         }
@@ -436,7 +436,7 @@ $(document).ready(function () {
         var editableLayers = new L.FeatureGroup();
         map.addLayer(editableLayers);
 
-        console.log(mode);
+     //   console.log(mode);
 
         var drawPluginOptions;
 
@@ -444,7 +444,7 @@ $(document).ready(function () {
 // Initialise the draw control and pass it the FeatureGroup of editable layers
         var drawControl = new L.Control.Draw(drawPluginOptions);
 
-        console.log(action)
+      //  console.log(action)
         if (action !== 'show') {
             map.addControl(drawControl);
         }
