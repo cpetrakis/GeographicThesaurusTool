@@ -10,7 +10,7 @@ var name = "";//this_url.searchParams.get("name");
 var mmode = "geonames";//this_url.searchParams.get("mode");
 
 var geonamesQueryUrl = "https://secure.geonames.org";
-var gettyQueryUrl = "https://dev.isl.ics.forth.gr/FCdev/getty";
+var gettyQueryUrl = "gettyURL";
 
 /*
  * Builds sparql query for Getty
@@ -308,13 +308,7 @@ $(document).ready(function () {
    // console.log(mmode);
 
 
-
-
-
-
     $.getJSON('configuration.json', function (data) {
-
-
         var url_string = window.location.href;
         var url = new URL(url_string);
         var mode = url.searchParams.get("mode");
@@ -325,7 +319,6 @@ $(document).ready(function () {
         action = "show";
         mode = "point";
 
-       
 
         $("#save_data").click(function () {
             var id = $("#geoId").val();
@@ -475,12 +468,9 @@ $(document).ready(function () {
             window.opener.document.getElementById(logo).value = result;
             window.close();
         });
-
 ////////////////////////////////////////////////////////////////////////////////         
-
         $('.leaflet-control-layers-overlays').hide();
         $('.leaflet-control-layers-separator').hide();
-
 //////////////////////////////////////////////////////////////////////////////// 
     });
 });
