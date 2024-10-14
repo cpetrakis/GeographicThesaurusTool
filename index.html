@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-
     <link rel="shortcut icon" href='img/fav.png' type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
     <title>Geographical Thesaurus Tool</title>
-
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -87,24 +84,15 @@
     </nav>
 
     <div class="nav-scroller bg-white shadow-sm"></div>
-
     <main role="main" class="container">
         <div class="d-flex align-items-center p-3 my-3 text-white-50  rounded shadow-sm">
             <img src="img/banner3.png" alt="" width="100%" height="100%">
-            <!--<div class="lh-100">
-                    <h6 class="mb-0 text-white lh-100">Hop</h6>
-                    <small>Since 2011</small>
-                </div> -->
         </div>
-
         <div class="my-3 p-3 bg-white rounded shadow-sm">
             <h6 class="border-bottom border-gray pb-2 mb-0">Select your location </h6>
-
             <form class="editLocationPopup" role="form">
                 <div style="margin:15px 0px 0px 0px;" class="form-group">
                     <label for="preferredLocationName">Location name</label>
-
-
                     <div class="form-group row">
                         <div class="col-md-9">
                             <input type="text" name="location_name" class="form-control" id="location_name" value="">
@@ -113,8 +101,6 @@
                             <button type="button" class="btn btn-outline-primary btn-block" id="search">Search</button>
                         </div>
                     </div>
-
-
                     <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
                         <span class="selection">
                             <span class="select2-selection select2-selection--single" role="combobox"
@@ -132,15 +118,7 @@
                 </div>
                 <div class="gettyResults"></div>
                 <div class="geoResults"></div>
-
                 <div id="map" style="width:100%; height: 500px; margin:0px 0px 10px 0px;"></div>
-
-                <div class="form-group">
-                    <label for="tgnId">TGN iD (<a title="Click to go to Getty Location database" target="_blank"
-                            href="//www.getty.edu/research/tools/vocabularies/tgn/">Getty Location database</a>)</label>
-                    <input type="text" name="tgnId" class="form-control" id="tgnId"
-                        placeholder="Fill in TGN ID (e.g. 1061730)" value="">
-                </div>
                 <div class="form-group">
                     <label for="geoId">Geonames iD (<a title="Click to go to Geonames database" target="_blank"
                             href="https://www.geonames.org/">Geonames</a>)</label>
@@ -157,14 +135,8 @@
                     <input type="text" name="other_name" class="form-control" id="other_name"
                         placeholder="Fill in second name for the location (optional)" value="">
                 </div>
-
-
-
                 <button type="button" class="btn btn-outline-primary" id="export_data">Export GeoJSON</button>
-                <!---                   <button type="button" class="btn btn-outline-primary" id="save_data">Save</button>
-                        <button type="button" class="btn btn-outline-primary" id="cancel">Cancel</button>-->
             </form>
-
         </div>
     </main>
 </body>
