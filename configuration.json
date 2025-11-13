@@ -17,9 +17,6 @@
                 "name": "Open Street Maps",
                 "link": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"              
             },
-            
-           
-           
             {
                 "name":"Open Topo Maps",
                 "link": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
@@ -36,89 +33,7 @@
                 "name":"Esri Satelite",
                 "link": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",               
                 "attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
-            },
-            {
-                "name":"Esri OceanBasemap",
-                "link": "https://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}",
-                 "maxZoom":13,
-                "attribution":"Tiles &copy; Esri &mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH, CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri"
-            },
-            {
-                "name":"Stamen_Watercolor",
-                "link": "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}",
-                "maxZoom":13,
-                "attribution":"Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors",
-                "ext": "jpg"
             }
-
-
     ],
-    
-    "image_layers": [
-        
-        {
-            "filename": "her-1967.jpg",
-            "layer_label":"Candia 1967",
-            "opacity":0.7,
-            "attribution": "Historical building plan ",
-            "interactive": false,
-            "point_1": { 
-                "latitude": 35.346757, 
-                "longitude": 25.123801
-            },
-            "point_2": { 
-                "latitude": 35.346533, 
-                "longitude": 25.142826
-            },
-            "point_3": { 
-                "latitude": 35.328617,
-                "longitude": 25.121459
-            }
-        },
-        {
-            "filename": "historic_map.PNG",
-            "layer_label":"Werdmuller 1668 - Gerola",
-            "opacity":0.7,
-            "attribution": "Historical building plan ",
-            "interactive": false,
-            "point_1": { 
-                "latitude": 35.3409647,
-                "longitude": 25.1192572
-            },
-            "point_2": { 
-                "latitude": 35.345639,
-                "longitude": 25.139280
-            },
-            "point_3": { 
-                "latitude": 35.3273696,
-                "longitude": 25.1239175
-            }
-        }
-
-    ],
-    
-    "legend":{
-          "visible":true,
-          "title" : "Κατάσταση Κτιρίων",
-           
-           "rows": [
-            { 
-                "label": "Καλή",
-                "color": "#FED976"
-            },
-            { 
-                "label": "Μικτή",
-                "color": "#FEB24C"
-            },
-            { 
-                "label": "Ερείπιο",
-                "color": "#E31A1C"
-            },
-            { 
-                "label": "Άλλη",
-                "color": "#800026"
-            }
-        ]
-    },
     "input": "excel"
 }
